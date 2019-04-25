@@ -35,7 +35,6 @@ class LagouSprier(object):
 				self.list_page(self.soursce)
 				nex_bt=self.drive.find_element_by_xpath("//div[@class='pager_container']/span[last()]")
 				if 'pager_next pager_next_disabled' in nex_bt.get_attribute('class'):
-					#json.dump(self.positioneds)
 					break
 				else:
 					nex_bt.click()
@@ -120,6 +119,7 @@ class LagouSprier(object):
 		desc = ''.join(html.xpath("//dd[@class='job_bt']//text()")).strip()
 		#print(desc)
 		item.append(desc)
+		print(item)
 		self.items.append(item)
 		pos={
 			'name':name,
@@ -138,7 +138,7 @@ class LagouSprier(object):
 			
 
 
-		sql = "INSERT INTO dashuju VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(jobname,company,salary,city,workyear,edu,desc,position,scale,domain,stage,time.time())
+		sql = "INSERT INTO test1 VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(jobname,company,salary,city,workyear,edu,desc,position,scale,domain,stage,time.time())
 		###插入数据
 		try:
 		   # 执行sql语句
